@@ -7,6 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     os.remove("items.json")
+    os.system("cd quotetutorial")
     os.system('scrapy crawl quotes -o items.json')
     return "<h1>Welcome to our server !!</h1>"
 
