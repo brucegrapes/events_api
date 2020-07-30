@@ -1,0 +1,5 @@
+Flask~=1.1.2
+Scrapy~=2.2.1
+itemadapter~=0.1.0
+gunicorn
+Flask-Cors
