@@ -6,8 +6,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    os.remove("items.json")
     os.system("cd quotetutorial")
+    os.remove("items.json")
     os.system('scrapy crawl townscript -o items.json')
     return "<h1>Welcome to our server !!</h1>"
 
@@ -21,7 +21,7 @@ def respond():
 @app.route('/extract/')
 def respond2():
     try:
-        with open('items.json') as f:
+        with open('quotetutorial/items.json') as f:
             data = json.load(f)
             print(data)
         return send_file('items.json', attachment_filename='items.json')
