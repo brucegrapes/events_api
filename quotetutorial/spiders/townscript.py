@@ -2,7 +2,7 @@ import scrapy
 from ..items import QuotetutorialItem
 class QuoteSpider(scrapy.Spider):
     name = 'townscript'
-    start_urls = ['https://www.townscript.com/in/coimbatore/near-you?page=1','https://www.townscript.com/in/coimbatore/near-you?page=2','https://www.townscript.com/in/coimbatore/near-you?page=3'
+    start_urls = ['https://www.townscript.com/in/coimbatore/near-you?page=2'
     ]
     def parse(self,response):
         items = QuotetutorialItem()
