@@ -21,7 +21,8 @@ def respond():
 @app.route('/extract/')
 def respond2():
     try:
-        with open('/quotetutorial/items.json') as f:
+        os.system("cd quotetutorial")
+        with open('items.json') as f:
             data = json.load(f)
             print(data)
         return send_file('items.json', attachment_filename='items.json')
