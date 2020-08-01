@@ -7,14 +7,14 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     os.system("cd quotetutorial")
-    os.remove("items.json")
-    os.system('scrapy crawl townscript -o items.json')
+    os.remove("town.json")
+    os.system('scrapy crawl townscript -o town.json')
     return "<h1>Welcome to our server !!</h1>"
 
 @app.route('/extract/', methods=['POST'])
 def respond():
     try:
-        os.system('scrapy crawl quotes -o items.json')
+        os.system('scrapy crawl quotes -o town.json')
         return
     except:
         return
@@ -22,10 +22,10 @@ def respond():
 def respond2():
     try:
         os.system("cd quotetutorial")
-        with open('items.json') as f:
+        with open('town.json') as f:
             data = json.load(f)
             print(data)
-        return send_file('items.json', attachment_filename='items.json')
+        return send_file('town.json', attachment_filename='items.json')
     except Exception as e:
         return str(e)
 
